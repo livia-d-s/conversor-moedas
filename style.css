@@ -1,0 +1,106 @@
+
+* {
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: gold;
+}
+
+
+
+main {
+    width: 375px;
+    background: wheat;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 2%;
+    margin-bottom: 40px;
+}
+
+p {
+   color: rgba(68, 57, 34, 0.867);
+   font-size: 14px;
+   font-weight: 400;
+}
+
+select, input {
+    background: #ffffff;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    height: 48px;
+    width: 100%;
+    margin-bottom: 24px;
+    appearance: none;
+    padding-left: 18px;
+    font-weight: 650;
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+}
+
+button {
+    background: rgb(208, 157, 27);
+    border-radius: 7px;
+    margin-left: 17px;
+    width: 90%;
+    border: none;
+    height: 48px;
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    opacity: 0.5;
+}
+
+section {
+    border: 1.5px solid whitesmoke;
+    border-radius: 20px;
+    margin-top: 36px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow {
+    margin: 15px 0;
+}
+
+.caixaDoConversor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.conversor {
+    color: #777777;
+    font-size: 14px;
+}
+
+.valorDoConversorInicial, .valorDoConversorFinal {
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#brazil {
+    width: 65px;
+}
+
+.currency-img {
+    width: 65px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Conversor de moedas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <main>
+        <p>Converter <b>de:</b></p>
+        <select class="moedaReal">
+            <option value="realBR">R$ - Real brasileiro</option>
+        </select>
+
+        <p>Converter <b>para:</b></p>
+
+        <select class="currencyMoedas">
+            <option value="dolar">$ - Dólar americano</option>
+            <!-- <option>£ - Libra esterlina</option> -->
+            <option value="euro">€ - Euro</option>
+            <option value="libra">£ - Libra esterlina</option>
+            <option value="bitcoin">₿ - Bitcoin</option>
+
+        </select>
+
+        <p><b>Valor</b></p>
+        <input class="mainInput" type="number" placeholder="1000" step="any" min="0">
+
+        <button id="convertButton">Converter</button>
+
+        <section>
+            <div class="caixaDoConversor">
+                <img id="brazil" src="./AssetsConversor/brasilBandeira.png" alt="real-br">
+                <p class="conversor">Real</p>
+                <p class="valorDoConversorInicial">R$ 0</p>
+            </div>
+
+            <img class="arrow" src="AssetsConversor/setaConversor.png" alt="seta">
+
+            <div class="caixaDoConversor">
+                <img class="currency-img" src="./AssetsConversor/usaBandeira.png" alt="dolar-eua">
+                <p class="conversor" id="conversordolar">Dólar</p>
+                <p class="valorDoConversorFinal">US$ 0</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
