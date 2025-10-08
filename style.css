@@ -4,18 +4,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto', ;
 }
 
 body {
-    background-color: gold;
+    background-color: #f5f5f5;
 }
 
 
 
 main {
+    border: 1px solid #0f6433;
+    box-shadow: 15px 15px #0f6433;
     width: 375px;
-    background: wheat;
+    background: #fafafa;
     border-radius: 20px;
     margin: 0 auto;
     margin-top: 40px;
@@ -24,7 +26,7 @@ main {
 }
 
 p {
-   color: rgba(68, 57, 34, 0.867);
+   color: rgba(34, 68, 37, 0.867);
    font-size: 14px;
    font-weight: 400;
 }
@@ -32,7 +34,8 @@ p {
 select, input {
     background: #ffffff;
     border: 1px solid #bbbbbb;
-    border-radius: 4px;
+    box-shadow: 0 2px 6px #c7d8ce;
+    border-radius: 8px;
     height: 48px;
     width: 100%;
     margin-bottom: 24px;
@@ -45,7 +48,7 @@ select, input {
 }
 
 button {
-    background: rgb(208, 157, 27);
+    background: #0f6433;
     border-radius: 7px;
     margin-left: 17px;
     width: 90%;
@@ -59,6 +62,7 @@ button {
 
 button:hover {
     opacity: 0.8;
+    filter: brightness(1.1);
 }
 
 button:active {
@@ -66,7 +70,7 @@ button:active {
 }
 
 section {
-    border: 1.5px solid whitesmoke;
+    border: 1.5px solid #0f6433;
     border-radius: 20px;
     margin-top: 36px;
     padding: 12px;
@@ -92,7 +96,7 @@ section {
 }
 
 .valorDoConversorInicial, .valorDoConversorFinal {
-    color: black;
+    color: #0f6433;
     font-size: 20px;
     font-weight: 700;
 }
@@ -103,4 +107,8 @@ section {
 
 .currency-img {
     width: 65px;
+}
+
+.distanciar-textos {
+    padding-bottom: 2px;
 }

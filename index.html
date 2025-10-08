@@ -6,23 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <title>Conversor de moedas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-
-
+<div class="all">
     <main>
-        <p>Converter <b>de:</b></p>
+        <p class="distanciar-textos">Converter <b>de:</b></p>
         <select class="moedaReal">
             <option value="realBR">R$ - Real brasileiro</option>
         </select>
 
-        <p>Converter <b>para:</b></p>
+        <p class="distanciar-textos">Converter <b>para:</b></p>
 
         <select class="currencyMoedas">
             <option value="dolar">$ - Dólar americano</option>
@@ -33,7 +30,7 @@
 
         </select>
 
-        <p><b>Valor</b></p>
+        <p class="distanciar-textos"><b>Valor</b></p>
         <input class="mainInput" type="number" placeholder="1000" step="any" min="0">
 
         <button id="convertButton">Converter</button>
@@ -54,8 +51,9 @@
             </div>
         </section>
     </main>
+</div>
 
-    <script src="script.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 
 </html>
