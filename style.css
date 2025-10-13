@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', ;
+    font-family: 'Roboto' ;
 }
 
 body {
@@ -80,7 +80,8 @@ section {
 }
 
 .arrow {
-    margin: 15px 0;
+    margin: 8px 0;
+    height: 40px;
 }
 
 .caixaDoConversor {
