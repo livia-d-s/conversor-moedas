@@ -70,7 +70,7 @@ const convertValues = async () => {
 
     if (taxaSelecionada) {
         let simbolo = currencySelect.value === "bitcoin" ? "BTC" : currencySelect.options[currencySelect.selectedIndex].text.split(" - ")[0];
-        textoFantasma.innerHTML = `1 Real = ${taxaSelecionada.toFixed(3)} ${simbolo}`;
+        textoFantasma.innerHTML = `1 Real = ${taxaSelecionada.toFixed(2)} ${simbolo}`;
     } else {
         textoFantasma.innerHTML = "";
     }
