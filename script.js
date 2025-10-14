@@ -8,11 +8,13 @@ const convertValues = async () => {
     const valueAlreadyConverted = document.querySelector(".valorDoConversorFinal");
 
     const data = await fetch("/api/get-rates").then(response => response.json());
+    console.log(await (await fetch('/api/get-rates')).json())
 
     // Pegar as cotações do objeto 'data' que a API retornou
     const dolarRate = data.conversion_rates.USD;
     const euroRate = data.conversion_rates.EUR;
     const libraRate = data.conversion_rates.GBP;
+    const swedishRate = data.conversion_rates.SEK;
     const bitcoinRate = 0.0000029;
 
     // Valor em Real formatado
@@ -43,6 +45,12 @@ const convertValues = async () => {
         const btcValue = inputCurrencyValue * bitcoinRate;
         valueAlreadyConverted.innerHTML = `₿ ${btcValue.toFixed(6)}`;
     }
+    if (currencySelect.value == "swedish") {
+        valueAlreadyConverted.innerHTML = new Intl.NumberFormat("sv-SE", {
+            style: "currency",
+            currency: "SEK"
+        }).format(inputCurrencyValue * swedishRate);
+    }
 };
 
 function changeCurrency() {
@@ -67,6 +75,11 @@ function changeCurrency() {
     if (currencySelect.value == "bitcoin") {
         currencyName.innerHTML = "Bitcoin";
         currencyImage.src = "./AssetsConversor/bitcoin.png";
+    }
+
+     if (currencySelect.value == "swedish") {
+        currencyName.innerHTML = "Coroa Sueca";
+        currencyImage.src = "./AssetsConversor/sueciaBandeira.png";
     }
 
     // Chama a função para converter os valores assim que a moeda é trocada
