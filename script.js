@@ -1,5 +1,6 @@
 const convertButton = document.getElementById('convertButton');
 const currencySelect = document.querySelector(".currencyMoedas");
+const textoFantasma = document.querySelector(".textoFantasma");
 
 
 const convertValues = async () => {
@@ -51,6 +52,29 @@ const convertValues = async () => {
             currency: "SEK"
         }).format(inputCurrencyValue * swedishRate);
     }
+
+    // Pegar a taxa da moeda selecionada
+    let taxaSelecionada;
+
+    if (currencySelect.value == "dolar") {
+        taxaSelecionada = dolarRate;
+    } else if (currencySelect.value == "euro") {
+        taxaSelecionada = euroRate;
+    } else if (currencySelect.value == "libra") {
+        taxaSelecionada = libraRate;
+    } else if (currencySelect.value == "bitcoin") {
+        taxaSelecionada = bitcoinRate;
+    } else if (currencySelect.value == "swedish") {
+        taxaSelecionada = swedishRate;
+    }
+
+    if (taxaSelecionada) {
+        let simbolo = currencySelect.value === "bitcoin" ? "BTC" : currencySelect.options[currencySelect.selectedIndex].text.split(" - ")[0];
+        textoFantasma.innerHTML = `1 Real = ${taxaSelecionada.toFixed(4)} ${simbolo}`;
+    } else {
+        textoFantasma.innerHTML = "";
+    }
+
 };
 
 function changeCurrency() {
@@ -77,7 +101,7 @@ function changeCurrency() {
         currencyImage.src = "./AssetsConversor/bitcoin.png";
     }
 
-     if (currencySelect.value == "swedish") {
+    if (currencySelect.value == "swedish") {
         currencyName.innerHTML = "Coroa Sueca";
         currencyImage.src = "./AssetsConversor/sueciaBandeira.png";
     }

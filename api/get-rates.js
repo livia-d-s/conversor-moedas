@@ -1,4 +1,4 @@
- export default async function handler(request, response) {
+export default async function handler(request, response) {
   // Pega a chave de API das Variáveis do Vercel
   const apiKey = process.env.EXCHANGE_RATE_API_KEY;
   const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/BRL`;
