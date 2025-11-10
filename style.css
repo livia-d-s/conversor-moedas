@@ -102,11 +102,11 @@ section {
     font-weight: 700;
 }
 
-#brazil {
+.currency-img-real {
     width: 65px;
 }
 
-.currency-img {
+.currency-img-dolar {
     width: 65px;
 }
 
