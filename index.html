@@ -1,71 +1,133 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
     <title>Conversor de moedas</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
+
+
 <body>
+
     <div class="all">
+
         <main>
-            <form>
-                <label for="moeda-origem" class="distanciar-textos">Converter **de:**</label>
-                <select id="moeda-origem" class="input1" aria-label="Moeda de Origem">
-                    <option value="realBR">R$ - Real brasileiro</option>
-                    <option value="dolar">$ - Dólar americano</option>
-                    <option value="euro">€ - Euro</option>
-                    <option value="libra">£ - Libra esterlina</option>
-                    <option value="bitcoin">₿ - Bitcoin</option>
-                    <option value="swedish">kr - Coroa Sueca</option>
-                </select>
 
-                <label for="moeda-destino" class="distanciar-textos">Converter **para:**</label>
-                <select id="moeda-destino" class="input2" aria-label="Moeda de Destino">
-                    <option value="dolar">$ - Dólar americano</option>
-                    <option value="realBR">R$ - Real brasileiro</option>
-                    <option value="euro">€ - Euro</option>
-                    <option value="libra">£ - Libra esterlina</option>
-                    <option value="bitcoin">₿ - Bitcoin</option>
-                    <option value="swedish">kr - Coroa Sueca</option>
-                </select>
+            <p class="distanciar-textos">Converter <b>de:</b></p>
 
-                <label for="valor-input" class="distanciar-textos">**Valor**</label>
-                <input id="valor-input" class="typeValueInput" type="number" placeholder="1000" step="any" min="0">
+            <select class="input1">
 
-                <button id="convertButton" type="submit">Converter</button>
-            </form>
+                <option value="realBR">R$ - Real brasileiro</option>
+
+              <!--  <option value="dolar">$ - Dólar americano</option>
+
+                <option value="euro">€ - Euro</option>
+
+                <option value="libra">£ - Libra esterlina</option>
+
+                <option value="bitcoin">₿ - Bitcoin</option>
+
+                <option value="swedish">kr - Coroa Sueca</option>
+           --> </select>
 
 
-            <section aria-live="polite">
-                <fieldset class="resultados-conversao">
-                    <legend class="sr-only">Resultados da Conversão</legend> 
-                    
-                    <div class="caixaDoConversor">
-                        <img src="./AssetsConversor/brasilBandeira.png" alt="Bandeira do Brasil" role="presentation">
-                        <p class="conversor">Real</p>
-                        <p class="valorDoConversorInicial" aria-atomic="true">R$ 0</p>
-                    </div>
 
-                    <img class="arrow" src="AssetsConversor/setaConversor.png" alt="Seta indicando a conversão">
+            <p class="distanciar-textos">Converter <b>para:</b></p>
 
-                    <div class="caixaDoConversor">
-                        <img class="currency-img" src="./AssetsConversor/usaBandeira.png" alt="Bandeira dos Estados Unidos" role="presentation">
-                        <p class="conversor" id="conversordolar">Dólar</p>
-                         <p class="valorDoConversorFinal" aria-atomic="true">US$ 0</p>
-                        </div>
-                </fieldset>
+
+
+            <select class="input2">
+
+                <option value="dolar">$ - Dólar americano</option>
+
+               <!-- <option value="realBR">R$ - Real brasileiro</option>-->
+
+                <option value="euro">€ - Euro</option>
+
+                <option value="libra">£ - Libra esterlina</option>
+
+                <option value="bitcoin">₿ - Bitcoin</option>
+
+                <option value="swedish">kr - Coroa Sueca</option>
+
+
+
+
+
+            </select>
+
+
+
+            <p class="distanciar-textos"><b>Valor</b></p>
+
+            <input class="typeValueInput" type="number" placeholder="1000" step="any" min="0">
+
+
+
+            <button id="convertButton">Converter</button>
+
+
+
+            <section>
+
+                <div class="caixaDoConversor">
+
+                    <img id="brazil" src="./AssetsConversor/brasilBandeira.png" alt="real-br">
+
+                    <p class="conversor">Real</p>
+
+                    <p class="valorDoConversorInicial">R$ 0</p>
+
+                </div>
+
+
+
+                <img class="arrow" src="AssetsConversor/setaConversor.png" alt="seta">
+
+
+
+                <div class="caixaDoConversor">
+
+                    <img class="currency-img" src="./AssetsConversor/usaBandeira.png" alt="dolar-eua">
+
+                    <p class="conversor" id="conversordolar">Dólar</p>
+
+                    <p class="valorDoConversorFinal">US$ 0</p>
+
+                    <p class="textoFantasma"></p>
+
+                </div>
+
             </section>
+
         </main>
+
     </div>
 
+
+
     <script src="script.js" defer></script>
+
 </body>
+
+
 
 </html>
