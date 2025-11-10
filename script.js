@@ -20,10 +20,10 @@ const convertValues = async () => {
     const bitcoinRate = 0.0000029;
 
     // Valor em Real formatado
-    valueToConvertReal.innerHTML = new Intl.NumberFormat("pt-BR", {
+    /*/valueToConvertReal.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL"
-    }).format(inputCurrencyValue);
+    }).format(inputCurrencyValue);/*/
 
     if (currencySelect.value == "realBR") {
         valueAlreadyConverted.innerHTML = new Intl.NumberFormat("pt-BR", {
