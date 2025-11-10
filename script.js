@@ -12,6 +12,7 @@ const convertValues = async () => {
     console.log(await (await fetch('/api/get-rates')).json())
 
     // Pegar as cotações do objeto 'data' que a API retornou
+    const realRate = data.conversion_rates.BRL;
     const dolarRate = data.conversion_rates.USD;
     const euroRate = data.conversion_rates.EUR;
     const libraRate = data.conversion_rates.GBP;
@@ -23,6 +24,13 @@ const convertValues = async () => {
         style: "currency",
         currency: "BRL"
     }).format(inputCurrencyValue);
+
+    if (currencySelect.value == "realBR") {
+        valueAlreadyConverted.innerHTML = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputCurrencyValue * realRate);
+    }
 
     if (currencySelect.value == "dolar") {
         valueAlreadyConverted.innerHTML = new Intl.NumberFormat("en-US", {
@@ -58,6 +66,8 @@ const convertValues = async () => {
 
     if (currencySelect.value == "dolar") {
         taxaSelecionada = dolarRate;
+    } else if (currencySelect.value == "realBR") {
+        taxaSelecionada = realRate;
     } else if (currencySelect.value == "euro") {
         taxaSelecionada = euroRate;
     } else if (currencySelect.value == "libra") {
@@ -80,6 +90,11 @@ const convertValues = async () => {
 function changeCurrency() {
     const currencyName = document.getElementById("conversordolar");
     const currencyImage = document.querySelector(".currency-img");
+
+    if (currencySelect.value == "realBR") {
+        currencyName.innerHTML = "Real";
+        currencyImage.src = "./AssetsConversor/brasilBandeira.png";
+    }
 
     if (currencySelect.value == "dolar") {
         currencyName.innerHTML = "Dólar";

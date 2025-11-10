@@ -13,50 +13,56 @@
 </head>
 
 <body>
-<div class="all">
-    <main>
-        <p class="distanciar-textos">Converter <b>de:</b></p>
-        <select class="moedaReal">
-            <option value="realBR">R$ - Real brasileiro</option>
-        </select>
+    <div class="all">
+        <main>
+            <p class="distanciar-textos">Converter <b>de:</b></p>
+            <select class="moedaReal">
+                <option value="realBR">R$ - Real brasileiro</option>
+                <option value="dolar">$ - Dólar americano</option>
+                <option value="euro">€ - Euro</option>
+                <option value="libra">£ - Libra esterlina</option>
+                <option value="bitcoin">₿ - Bitcoin</option>
+                <option value="swedish">kr - Coroa Sueca</option>
+            </select>
 
-        <p class="distanciar-textos">Converter <b>para:</b></p>
+            <p class="distanciar-textos">Converter <b>para:</b></p>
 
-        <select class="currencyMoedas">
-            <option value="dolar">$ - Dólar americano</option>
-            <option value="euro">€ - Euro</option>
-            <option value="libra">£ - Libra esterlina</option>
-            <option value="bitcoin">₿ - Bitcoin</option>
-            <option value="swedish">kr - Coroa Sueca</option>
+            <select class="currencyMoedas">
+                <option value="realBR">R$ - Real brasileiro</option>
+                <option value="dolar">$ - Dólar americano</option>
+                <option value="euro">€ - Euro</option>
+                <option value="libra">£ - Libra esterlina</option>
+                <option value="bitcoin">₿ - Bitcoin</option>
+                <option value="swedish">kr - Coroa Sueca</option>
 
 
-        </select>
+            </select>
 
-        <p class="distanciar-textos"><b>Valor</b></p>
-        <input class="mainInput" type="number" placeholder="1000" step="any" min="0">
+            <p class="distanciar-textos"><b>Valor</b></p>
+            <input class="mainInput" type="number" placeholder="1000" step="any" min="0">
 
-        <button id="convertButton">Converter</button>
+            <button id="convertButton">Converter</button>
 
-        <section>
-            <div class="caixaDoConversor">
-                <img id="brazil" src="./AssetsConversor/brasilBandeira.png" alt="real-br">
-                <p class="conversor">Real</p>
-                <p class="valorDoConversorInicial">R$ 0</p>
-            </div>
+            <section>
+                <div class="caixaDoConversor">
+                    <img id="brazil" src="./AssetsConversor/brasilBandeira.png" alt="real-br">
+                    <p class="conversor">Real</p>
+                    <p class="valorDoConversorInicial">R$ 0</p>
+                </div>
 
-            <img class="arrow" src="AssetsConversor/setaConversor.png" alt="seta">
+                <img class="arrow" src="AssetsConversor/setaConversor.png" alt="seta">
 
-            <div class="caixaDoConversor">
-                <img class="currency-img" src="./AssetsConversor/usaBandeira.png" alt="dolar-eua">
-                <p class="conversor" id="conversordolar">Dólar</p>
-                <p class="valorDoConversorFinal">US$ 0</p>
-                <p class="textoFantasma"></p>
-            </div>
-        </section>
-    </main>
-</div>
+                <div class="caixaDoConversor">
+                    <img class="currency-img" src="./AssetsConversor/usaBandeira.png" alt="dolar-eua">
+                    <p class="conversor" id="conversordolar">Dólar</p>
+                    <p class="valorDoConversorFinal">US$ 0</p>
+                    <p class="textoFantasma"></p>
+                </div>
+            </section>
+        </main>
+    </div>
 
-<script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
