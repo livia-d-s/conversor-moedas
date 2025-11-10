@@ -1,18 +1,19 @@
 const convertButton = document.getElementById('convertButton');
-const currencySelect = document.querySelector(".currencyMoedas");
 const textoFantasma = document.querySelector(".textoFantasma");
 
+const currencySelect1 = document.querySelector(".input1");
+const currencySelect2 = document.querySelector(".input2");
 
-const convertValues = async () => {
-    const inputCurrencyValue = document.querySelector(".mainInput").value;
-    const valueToConvertReal = document.querySelector(".valorDoConversorInicial");
+
+const convertValues1 = async () => {
+    const inputCurrencyValue = document.querySelector(".typeValueInput").value;
+    const valueToConvert = document.querySelector(".valorDoConversorInicial");
     const valueAlreadyConverted = document.querySelector(".valorDoConversorFinal");
 
     const data = await fetch("/api/get-rates").then(response => response.json());
     console.log(await (await fetch('/api/get-rates')).json())
 
     // Pegar as cotações do objeto 'data' que a API retornou
-    const realRate = data.conversion_rates.BRL;
     const dolarRate = data.conversion_rates.USD;
     const euroRate = data.conversion_rates.EUR;
     const libraRate = data.conversion_rates.GBP;
@@ -20,41 +21,34 @@ const convertValues = async () => {
     const bitcoinRate = 0.0000029;
 
     // Valor em Real formatado
-    /*/valueToConvertReal.innerHTML = new Intl.NumberFormat("pt-BR", {
+    valueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL"
-    }).format(inputCurrencyValue);/*/
+    }).format(inputCurrencyValue);
 
-    if (currencySelect.value == "realBR") {
-        valueAlreadyConverted.innerHTML = new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL"
-        }).format(inputCurrencyValue * realRate);
-    }
-
-    if (currencySelect.value == "dolar") {
+    if (currencySelect2.value == "dolar") {
         valueAlreadyConverted.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD"
         }).format(inputCurrencyValue * dolarRate);
     }
-    if (currencySelect.value == "euro") {
+    if (currencySelect2.value == "euro") {
         valueAlreadyConverted.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "EUR"
         }).format(inputCurrencyValue * euroRate);
     }
-    if (currencySelect.value == "libra") {
+    if (currencySelect2.value == "libra") {
         valueAlreadyConverted.innerHTML = new Intl.NumberFormat("en-GB", {
             style: "currency",
             currency: "GBP"
         }).format(inputCurrencyValue * libraRate);
     }
-    if (currencySelect.value == "bitcoin") {
+    if (currencySelect2.value == "bitcoin") {
         const btcValue = inputCurrencyValue * bitcoinRate;
         valueAlreadyConverted.innerHTML = `₿ ${btcValue.toFixed(6)}`;
     }
-    if (currencySelect.value == "swedish") {
+    if (currencySelect2.value == "swedish") {
         valueAlreadyConverted.innerHTML = new Intl.NumberFormat("sv-SE", {
             style: "currency",
             currency: "SEK"
@@ -64,22 +58,20 @@ const convertValues = async () => {
     // Pegar a taxa da moeda selecionada
     let taxaSelecionada;
 
-    if (currencySelect.value == "dolar") {
+    if (currencySelect2.value == "dolar") {
         taxaSelecionada = dolarRate;
-    } else if (currencySelect.value == "realBR") {
-        taxaSelecionada = realRate;
-    } else if (currencySelect.value == "euro") {
+    } else if (currencySelect2.value == "euro") {
         taxaSelecionada = euroRate;
-    } else if (currencySelect.value == "libra") {
+    } else if (currencySelect2.value == "libra") {
         taxaSelecionada = libraRate;
-    } else if (currencySelect.value == "bitcoin") {
+    } else if (currencySelect2.value == "bitcoin") {
         taxaSelecionada = bitcoinRate;
-    } else if (currencySelect.value == "swedish") {
+    } else if (currencySelect2.value == "swedish") {
         taxaSelecionada = swedishRate;
     }
 
     if (taxaSelecionada) {
-        let simbolo = currencySelect.value === "bitcoin" ? "BTC" : currencySelect.options[currencySelect.selectedIndex].text.split(" - ")[0];
+        let simbolo = currencySelect2.value === "bitcoin" ? "BTC" : currencySelect2.options[currencySelect2.selectedIndex].text.split(" - ")[0];
         textoFantasma.innerHTML = `1 Real = ${taxaSelecionada.toFixed(2)} ${simbolo}`;
     } else {
         textoFantasma.innerHTML = "";
@@ -91,40 +83,35 @@ function changeCurrency() {
     const currencyName = document.getElementById("conversordolar");
     const currencyImage = document.querySelector(".currency-img");
 
-    if (currencySelect.value == "realBR") {
-        currencyName.innerHTML = "Real";
-        currencyImage.src = "./AssetsConversor/brasilBandeira.png";
-    }
-
-    if (currencySelect.value == "dolar") {
+    if (currencySelect2.value == "dolar") {
         currencyName.innerHTML = "Dólar";
         currencyImage.src = "./AssetsConversor/usaBandeira.png";
     }
 
-    if (currencySelect.value == "euro") {
+    if (currencySelect2.value == "euro") {
         currencyName.innerHTML = "Euro";
         currencyImage.src = "./AssetsConversor/euroBandeira.png";
     }
 
-    if (currencySelect.value == "libra") {
+    if (currencySelect2.value == "libra") {
         currencyName.innerHTML = "Libra esterlina";
         currencyImage.src = "./AssetsConversor/libraBandeira.png";
     }
 
-    if (currencySelect.value == "bitcoin") {
+    if (currencySelect2.value == "bitcoin") {
         currencyName.innerHTML = "Bitcoin";
         currencyImage.src = "./AssetsConversor/bitcoin.png";
     }
 
-    if (currencySelect.value == "swedish") {
+    if (currencySelect2.value == "swedish") {
         currencyName.innerHTML = "Coroa Sueca";
         currencyImage.src = "./AssetsConversor/sueciaBandeira.png";
     }
 
     // Chama a função para converter os valores assim que a moeda é trocada
-    convertValues();
+    convertValues1();
 }
 
 // "escutadores de evento" para o botão e para a troca de moeda
-currencySelect.addEventListener("change", changeCurrency);
-convertButton.addEventListener("click", convertValues);
+currencySelect2.addEventListener("change", changeCurrency);
+convertButton.addEventListener("click", convertValues1);
